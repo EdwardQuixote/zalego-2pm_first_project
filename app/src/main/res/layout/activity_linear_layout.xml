@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LinearLayoutActivity">
+
+    <LinearLayout
+        android:id="@+id/firstLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="18dp"
+        android:paddingStart="18dp"
+        android:paddingRight="18dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edFirstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/firstName"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/edMiddleName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="@string/middleName"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/edLastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/lastName"
+            android:inputType="textPersonName"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="18dp"
+        android:paddingStart="18dp"
+        android:paddingRight="18dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="16dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/firstRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtPhoneNumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/edPhoneNumber"
+                android:text="@string/phoneNumberLabel"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/spnPhoneCountryCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtPhoneNumberLabel"
+                android:layout_alignBottom="@id/edPhoneNumber"
+                android:entries="@array/arrayPhoneCountryCodes"/>
+
+            <EditText
+                android:id="@+id/edPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtPhoneNumberLabel"
+                android:layout_toRightOf="@id/spnPhoneCountryCode"
+                android:layout_toEndOf="@id/spnPhoneCountryCode"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:hint="@string/phoneNumber"
+                android:inputType="phone"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/secondRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtEmailAddressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/edEmailAddress"
+                android:text="@string/emailAddressLabel"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/edEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtEmailAddressLabel"
+                android:layout_marginTop="5dp"
+                android:hint="@string/emailAddress"
+                android:inputType="textEmailAddress"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/firstFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_viewgroups"
+        android:padding="@dimen/padding_parent_child">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|start"
+            android:text="@string/buttonCancel"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|end|center_vertical"
+            android:text="@string/buttonSave"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:text="@string/txtNeedHelp"
+            android:textStyle="italic"
+            android:textSize="11sp"
+            android:textColor="@color/colorPrimaryDark"/>
+    </FrameLayout>
+</LinearLayout>
